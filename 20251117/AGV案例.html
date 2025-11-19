@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>AGV管理系统</title>
+    <link rel="stylesheet" href="css/AGV.css" />
+    <style>
+        
+
+        /* 搜索表单样式 */
+        .search-form {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: 10px; /* 控件之间的间距 */
+            margin: 20px 0;
+        }
+        .search-form input[type="text"], .search-form select {
+            padding: 5px; /* 输入框内边距 */
+            width: 260px; /* 宽度 */
+        }
+        .search-form button {
+            padding: 5px 15px; /* 按钮内边距 */
+        }
+
+        /* 表格样式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd; /* 边框 */
+            padding: 8px; /* 单元格内边距 */
+            text-align: center; /* 左对齐 */
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .avatar {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* 页脚样式 */
+        .footer {
+            background-color: #b5b3b3; /* 灰色背景 */
+            color: white; /* 白色文字 */
+            text-align: center; /* 居中文本 */
+            padding: 10px 0; /* 上下内边距 */
+            margin-top: 30px;
+        }
+
+        #container {
+            width: 80%; /* 宽度为80% */
+            margin: 0 auto; /* 水平居中 */
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <!-- 顶部导航栏 -->
+        <div class="navbar">
+            <h1>AGV管理系统</h1>
+            <a href="#">退出登录</a>
+        </div>
+
+        <!-- 搜索表单区域 -->
+        <form class="search-form" action="/search" method="post">
+            <label for="name">Name：</label>
+            <input type="text" id="name" name="name" placeholder="Enter Name">
+
+            <label for="navType">NAV Type：</label>
+            <select id="navType" name="navType">
+                <option value=""></option>
+                <option value="1">QR</option>
+                <option value="2">SLAM</option>
+            </select>
+
+            <label for="type">Type：</label>
+            <select id="type" name="type">
+                <option value=""></option>
+                <option value="1">600KG</option>
+                <option value="2">1000KG</option>
+            </select>
+
+            <button type="submit">Search</button>
+            <button type="reset">Clear</button>
+        </form>
+
+        <!-- 表格展示区 -->
+        <table>
+            <!-- 表头 -->
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>NAV Type</th>
+                    <th>Type</th>
+                    <th>Create Time</th>
+                    <th>Update Time</th>
+                    <th>Operate</th>
+                </tr>
+            </thead>
+
+            <!-- 表格主体内容 -->
+            <tbody>
+                <tr>
+                    <td>1号</td>
+                    <td>SLAM</td>
+                    
+                    <td>600KG</td>
+                    <td>2021-06-15</td>
+                    <td>2024-09-16 15:30</td>
+                    <td class="action-buttons">
+                        <button type="button">Edit</button>
+                        <button type="button">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2号</td>
+                    <td>QR</td>
+                    
+                    <td>600KG</td>
+                    <td>2021-07-20</td>
+                    <td>2024-09-17 09:00</td>
+                    <td class="action-buttons">
+                        <button type="button">Edit</button>
+                        <button type="button">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3号</td>
+                    <td>QR</td>
+                    
+                    <td>1000KG</td>
+                    <td>2021-05-01</td>
+                    <td>2024-09-15 17:45</td>
+                    <td class="action-buttons">
+                        <button type="button">Edit</button>
+                        <button type="button">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4号</td>
+                    <td>SLAM</td>
+                    
+                    <td>1000KG</td>
+                    <td>2021-05-01</td>
+                    <td>2024-09-15 17:45</td>
+                    <td class="action-buttons">
+                        <button type="button">Edit</button>
+                        <button type="button">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5号</td>
+                    <td>QR</td>
+                    
+                    <td>600KG</td>
+                    <td>2021-06-15</td>
+                    <td>2024-09-16 15:30</td>
+                    <td class="action-buttons">
+                        <button type="button">Edit</button>
+                        <button type="button">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>6号</td>
+                    <td>QR</td>
+                   
+                    <td>1000KG</td>
+                    <td>2021-07-20</td>
+                    <td>2024-09-17 09:00</td>
+                    <td class="action-buttons">
+                        <button type="button">Edit</button>
+                        <button type="button">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>7号</td>
+                    <td>QR</td>
+                    
+                    <td>600KG</td>
+                    <td>2021-05-01</td>
+                    <td>2024-09-15 17:45</td>
+                    <td class="action-buttons">
+                        <button type="button">Edit</button>
+                        <button type="button">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8号</td>
+                    <td>SLAM</td>
+                    
+                    <td>1000KG</td>
+                    <td>2021-05-01</td>
+                    <td>2024-09-15 17:45</td>
+                    <td class="action-buttons">
+                        <button type="button">Edit</button>
+                        <button type="button">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>9号</td>
+                    <td>QR</td>
+                    
+                    <td>1000KG</td>
+                    <td>2021-05-01</td>
+                    <td>2024-09-15 17:45</td>
+                    <td class="action-buttons">
+                        <button type="button">Edit</button>
+                        <button type="button">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>10号</td>
+                    <td>SLAM</td>
+                    
+                    <td>600KG</td>
+                    <td>2021-05-01</td>
+                    <td>2024-09-15 17:45</td>
+                    <td class="action-buttons">
+                        <button type="button">Edit</button>
+                        <button type="button">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 页脚版权区域 -->
+        <footer class="footer">
+            <p>Copyright © 2018-2025 AJautomation All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

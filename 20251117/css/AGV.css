@@ -1,0 +1,21 @@
+ /* 导航栏样式 */
+        .navbar {
+            background-color: #b5b3b3; /* 灰色背景 */
+            
+            display: flex; /* flex弹性布局 */
+            justify-content: space-between; /* 左右对齐 */
+
+            padding: 10px; /* 内边距 */
+            align-items: center; /* 垂直居中 */
+        }
+        .navbar h1 {
+            margin: 0; /* 移除默认的上下外边距 */
+            font-weight: bold; /* 加粗 */
+            color: white;
+            /* 设置字体为楷体 */
+            font-family: "楷体";
+        }
+        .navbar a {
+            color: white; /* 链接颜色为白色 */
+            text-decoration: none; /* 移除下划线 */
+        }
