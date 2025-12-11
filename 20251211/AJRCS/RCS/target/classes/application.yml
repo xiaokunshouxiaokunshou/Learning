@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: RCS
+  #数据库设置
+  datasource:
+    url: jdbc:mysql://localhost:3306/db01
+    #url: jdbc:mysql://192.168.203.132:3306/db01
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1234
+#Mybatis的相关配置
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #开启驼峰命名映射开关
+    map-underscore-to-camel-case: true
